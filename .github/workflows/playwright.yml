@@ -4,7 +4,6 @@ on:
     branches:
         - main
         - master
-        - staging
   schedule:
     - cron: "00 15 * * FRI"
   workflow_dispatch:      
@@ -15,8 +14,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-            - commands: npx playwright test saucedemoSuccess.spec.ts -g "successful shop in saucedemo"
-            - commands: npx playwright test saucedemoSuccess.spec.ts -g "failed login in saucedemo"
+            - commands: npx playwright test saucedemoE2E.spec.ts -g "successful shop in saucedemo"
+            - commands: npx playwright test saucedemoE2E.spec.ts -g "failed login in saucedemo"
             - commands: npx playwright test saucedemoCheckoutZero.spec.ts
     timeout-minutes: 60
     runs-on: ubuntu-latest
