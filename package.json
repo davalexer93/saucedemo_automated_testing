@@ -1,0 +1,22 @@
+{
+  "name": "playwright_testing",
+  "version": "1.0.0",
+  "description": "Automation test proyect in Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": ["playwright","automation", "typescript"],
+  "repository": "https://github.com/davalexer93/saucedemo_automated_testing",
+  "author": {
+    "email": "davalexer93@gmail.com",
+    "name": "David Alexander Rubio Baron",
+    "url": "https://github.com/davalexer93"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}
