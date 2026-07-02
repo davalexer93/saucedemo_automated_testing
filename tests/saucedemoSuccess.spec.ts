@@ -46,3 +46,11 @@ test('successful shop in saucedemo', async ({ fixtures, page }) => {
   const voucher = new VoucherPage(page)
   await voucher.validateSuccessVoucher()
 });
+
+test('failed login in saucedemo', async ({ page }) => {
+  await page.goto('/');
+  const login = new LoginPage(page)
+  await login.loginWithCredentials('locked_out_user','secret_sauce')
+  await expect(page.getByRole('heading',{name: 'Epic sadface: Sorry, this user has been locked out.'})).toBeVisible()
+  await page.locator('[data-test="error-button"]').click();
+});
